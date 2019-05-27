@@ -1,0 +1,36 @@
+const mongoose = require("mongoose")
+
+const Structure = mongoose.model("Structure")
+
+module.exports = {
+    async findall(req,res){
+        const structures = await Structure.find();
+        
+        
+        return res.json(structures);
+    },
+    
+    async findone(req,res){
+        const structure = await Structure.findById(req.params.id);
+        return res.json(structure)
+    },
+
+    async store(req,res){
+       await 
+       Structure.create({
+            title: req.body.nome,
+            description: req.body.description
+        });
+        res.send("Usuário cadastrado com sucesso!")
+    },
+
+    async update(req,res){
+        const structure = await Structure.findByIdAndUpdate(req.params.id,req.body,{new : true})
+        res.send("Usuário atualizado com sucesso!") 
+    },
+
+    async destroy(req,res){
+        await Structure.findByIdAndRemove(req.params.id)
+        res.send("Usuário excluído com sucesso!")
+    }
+}
