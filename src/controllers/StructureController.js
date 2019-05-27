@@ -18,7 +18,8 @@ module.exports = {
     await Structure.create({
       title: req.body.nome,
       description: req.body.description,
-      date: req.body.date
+      date: req.body.date,
+      url: req.body.url
     });
     res.send("Usuário cadastrado com sucesso!");
   },

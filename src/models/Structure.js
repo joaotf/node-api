@@ -13,6 +13,10 @@ const StructureSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  url: {
+    type: URL,
+    required: true
+  },
   createdAt: {
     type: Date,
     default: Date.now
