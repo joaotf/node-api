@@ -14,7 +14,7 @@ const StructureSchema = new mongoose.Schema({
     required: true
   },
   url: {
-    type: URL,
+    type: String,
     required: true
   },
   createdAt: {
