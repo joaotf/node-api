@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const app = express();
 require("./models/Structure");
+
 app.use(cors());
 app.use(body.urlencoded({ extended: false }));
 app.use(body.json());
@@ -16,6 +17,7 @@ app.use(function(req, res, next) {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
 
