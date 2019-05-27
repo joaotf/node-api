@@ -2,9 +2,11 @@ const express = require("express");
 const body = require("body-parser");
 const mongoose = require("mongoose");
 const connection = require("./connection/database.js");
+const cors = require("cors");
 
 const app = express();
 require("./models/Structure");
+app.use(cors());
 app.use(body.urlencoded({ extended: false }));
 app.use(body.json());
 
