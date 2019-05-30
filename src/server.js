@@ -5,10 +5,7 @@ const connection = require("./connection/database.js");
 const cors = require("cors");
 
 const app = express();
-require("./models/Structure");
-
-app.use(body.urlencoded({ extended: false }));
-app.use(body.json());
+app.use(cors());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -19,7 +16,11 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
   next();
 });
-app.use(cors());
+
+require("./models/Structure");
+
+app.use(body.urlencoded({ extended: false }));
+app.use(body.json());
 
 app.use("/api", require("./routes/routes.js"));
 
