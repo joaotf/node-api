@@ -21,7 +21,7 @@ module.exports = {
       date: req.body.date,
       url: req.body.url
     });
-    res.send("Tarefa cadastrada com sucesso!");
+    return alert("Tarefa cadastrada com sucesso!");
   },
 
   async update(req, res) {
@@ -30,11 +30,11 @@ module.exports = {
       req.body,
       { new: true }
     );
-    res.send("Tarefa atualizada com sucesso!");
+    return alert("Tarefa atualizada com sucesso!");
   },
 
   async destroy(req, res) {
     await Structure.findByIdAndRemove(req.params.id);
-    res.send("Tarefa excluída com sucesso!");
+    return alert("Tarefa excluída com sucesso!");
   }
 };

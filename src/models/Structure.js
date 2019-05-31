@@ -2,20 +2,16 @@ const mongoose = require("mongoose");
 
 const StructureSchema = new mongoose.Schema({
   title: {
-    type: String,
-    required: true
+    type: String
   },
   description: {
-    type: String,
-    required: true
+    type: String
   },
   date: {
-    type: String,
-    required: true
+    type: String
   },
   url: {
-    type: String,
-    required: true
+    type: String
   },
   createdAt: {
     type: Date,
